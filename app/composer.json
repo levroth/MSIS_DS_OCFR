@@ -1,0 +1,12 @@
+{
+    "name": "levroth/MSIS_DS_OCFR",
+    "description": "MSIS DS Team Project",
+    "license": "private",
+    "authors": [{
+        "name": "Team 24"
+    }],
+    "require": {},
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
