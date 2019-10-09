@@ -1,7 +1,7 @@
 var certificationRecordApp = new Vue({
   el: '#certificationRecordApp',
   data: {
-      certRecord: {},
+      certRecord: [],
       members: []
   },
   methods: {
