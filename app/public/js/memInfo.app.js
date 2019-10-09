@@ -1,7 +1,7 @@
 var memberRecordApp = new Vue({
-  el: '#memberRecordecordApp',
+  el: '#memberRecordApp',
   data: {
-      memberRecord: {},
+      memberRecord: [],
       certificates: []
   },
   methods: {

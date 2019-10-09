@@ -6,7 +6,7 @@ var ocfrRecordsApp = new Vue({
   },
   methods: {
     fetchMember() {
-      fetch('api/member')
+      fetch('api/members')
       .then(response => response.json())
       .then(json => { ocfrRecordsApp.members = json})
     },
