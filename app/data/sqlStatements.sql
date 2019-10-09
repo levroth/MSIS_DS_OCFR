@@ -1,6 +1,6 @@
 CREATE DATABASE ocfr_team24;
 
-UUSE ocfr_team24;
+USE ocfr_team24;
 
 CREATE TABLE Person (
 pId varchar(64) NOT NULL PRIMARY KEY,
@@ -51,3 +51,11 @@ INSERT INTO Certification(cID,agency,certName,expiry)
 VALUES ('5525','ECC', 'CPR','2'),
 ('1346', 'National Registry of Emegency Medical Technicians','EMT','3'),
 ('4219','National Environmental Trainers', 'HAZMAT','5');
+
+INSERT INTO CurrentCert (pId, cId, renewedDate, expDate)
+VALUES ('ABCD-1234-EFGH','1346', '2018-10-15','2021-10-15'),
+('ABCD-1234-EFGH','5525','2017-12-12','2019-12-12'),
+('EFGH-5678-IJKL','1346', '2019-05-07','2022-05-07'),
+('EFGH-5678-IJKL','5525', '2019-04-03','2021-04-03'),
+('EFGH-5678-IJKL','4219', '2016-02-01','2021-02-01'),
+('MNOP-9101-QRST','5525','2018-11-11','2020-11-11');
