@@ -48,7 +48,7 @@
     </thead>
     <tbody>
 
-      <tr v-for="m in members" @click="handleRowClick(p)">
+      <tr v-for="m in members">
         <td>{{ m.pId }}</td>
         <td>{{ m.firstName }}</td>
         <td>{{ m.lastName }}</td>
@@ -61,7 +61,7 @@
   </table>
 
 
-  <h2>Certification Record</h2>
+  <h2>Certification</h2>
 
   <table class="table table-sm table-hover">
     <thead>
@@ -74,7 +74,7 @@
     </thead>
     <tbody>
 
-      <tr v-for="c in certificates" @click="handleRowClick(p)">
+      <tr v-for="c in certificates">
         <td>{{ c.cId }}</td>
         <td>{{ c.agency }}</td>
         <td>{{ c.certName }}</td>
@@ -92,5 +92,8 @@
   <p class="info">  OCFR | Phone: 800-555-1234 | 123 Fire Lane, Watkinsville, GA  30622</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/certInfo.app.js"></script>
+<script src="js/memInfo.app.js"></script>
+<script src="js/record.app.js"></script>
 </body>
 </html>
