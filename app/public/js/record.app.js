@@ -15,10 +15,10 @@ var ocfrRecordsApp = new Vue({
       .then(response => response.json())
       .then(json => { ocfrRecordsApp.certificates = json})
     }
-  }, 
+  },
   created() {
-    this.fetchRecords();
-
+    this.fetchMember();
+    this.fetchCertification();
     //this.fetchPatients();
   }
 });
