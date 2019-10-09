@@ -32,12 +32,66 @@
   </div>
 </nav>
 <div class="mainContent">
-  <h2>This is a placeholder</h2>
+  <h2>Membership</h2>
+
+<div id="ocfrRecordsApp">
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Radio Number</th>
+        <th>Station Number</th>
+        <th>Is active</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr v-for="m in members">
+        <td>{{ m.pId }}</td>
+        <td>{{ m.firstName }}</td>
+        <td>{{ m.lastName }}</td>
+        <td>{{ m.radioNumber }}</td>
+        <td>{{ m.stationNumber }}</td>
+        <td>{{ m.isActive }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <h2>Certification</h2>
+
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Certification ID</th>
+        <th>Certifying agency</th>
+        <th>Certification name</th>
+        <th>Expiration period</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr v-for="c in certificates">
+        <td>{{ c.cId }}</td>
+        <td>{{ c.agency }}</td>
+        <td>{{ c.certName }}</td>
+        <td>{{ c.expiry }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
   <p>This is a placeholder</p>
 </div>
 <footer>
   <p class="info">  OCFR | Phone: 800-555-1234 | 123 Fire Lane, Watkinsville, GA  30622</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/record.app.js"></script>
 </body>
 </html>

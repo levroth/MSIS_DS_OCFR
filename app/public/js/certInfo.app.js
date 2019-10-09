@@ -8,7 +8,6 @@ var certificationRecordApp = new Vue({
 
   }, // end methods
   created() {
-    this.handleReset();
     //this.fetchPatients();
   }
 });
