@@ -77,19 +77,40 @@
           <table class="table table-sm table-hover">
             <thead>
               <tr>
-                <th>Certification ID</th>
-                <th>Agency</th>
-                <th>Certification Name</th>
-                <th>Expiry</th>
+                <th>pId</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Position</th>
+                <th>Radio Number</th>
+                <th>Station Number</th>
+                <th>Active?</th>
+                <th>Start Date</th>
+                <th>Email</th>
+                <th>Home Phone</th>
+                <th>Mobile Phone</th>
+                <th>Work Phone</th>
+                <th>Address</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="p in patients">
-                <td>{{ p.patientGuid }}</td>
-                <td>{{ p.firstName }}</td>
-                <td>{{ p.lastName }}</td>
-                <td>{{ p.dob }}</td>
-                <td>{{ p.sexAtBirth }}</td>
+              <tr v-for="m in members">
+                <td>{{ m.pId }}</td>
+                <td>{{ m.firstName }}</td>
+                <td>{{ m.lastName }}</td>
+                <td>{{ m.gender }}</td>
+                <td>{{ m.dob }}</td>
+                <td>{{ m.position }}</td>
+                <td>{{ m.radioNumber }}</td>
+                <td>{{ m.stationNumber }}</td>
+                <td>{{ m.isActive }}</td>
+                <td>{{ m.startDate }}</td>
+                <td>{{ m.email }}</td>
+                <td>{{ m.homePhone }}</td>
+                <td>{{ m.mobilePhone }}</td>
+                <td>{{ m.workPhone }}</td>
+                <td>{{ m.address }}</td>
               </tr>
             </tbody>
           </table>
