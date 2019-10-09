@@ -104,7 +104,8 @@
                 <td>{{ m.position }}</td>
                 <td>{{ m.radioNumber }}</td>
                 <td>{{ m.stationNumber }}</td>
-                <td>{{ m.isActive }}</td>
+                <td v-if = "m.isActive" >Active</td>
+                <td v-else>Inactive</td>
                 <td>{{ m.startDate }}</td>
                 <td>{{ m.email }}</td>
                 <td>{{ m.homePhone }}</td>
