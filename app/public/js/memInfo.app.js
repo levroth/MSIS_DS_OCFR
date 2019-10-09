@@ -8,7 +8,6 @@ var memberRecordApp = new Vue({
 
   }, // end methods
   created() {
-    this.handleReset();
     //this.fetchPatients();
   }
 });
