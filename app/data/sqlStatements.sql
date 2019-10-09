@@ -41,3 +41,13 @@ FOREIGN KEY (cId)
   REFERENCES Certification(cId)
   ON DELETE CASCADE
 );
+
+INSERT INTO Person(pId, firstName, lastName, gender, dob, position, radioNumber, stationNumber, isActive, startDate, email, mobilePhone, address)
+VALUES ('ABCD-1234-EFGH', 'John','Stapleton','M', '1980-10-10','Officer','B-2','2',TRUE,'2010-08-10','Jstapleton@OCFR.gov','7064104933','212 Thomas Way, Watkinsville, GA, 30621'),
+('EFGH-5678-IJKL', 'Denise','Richars','F', '1965-07-18','Chief','A-4','1',TRUE,'2002-05-05','Drichards@OCFR.gov','7062253914','400 Curry Court, Watkinsville, GA, 30621'),
+('MNOP-9101-QRST', 'Zach','Lyle','M', '1990-06-02','Trainee','C-6','2',TRUE,'2018-01-10','Zlyle@OCFR.gov','7068875524','317 Murray Avenue Apartment C, Watkinsville, GA, 30621');
+
+INSERT INTO Certification(cID,agency,certName,expiry)
+VALUES ('5525','ECC', 'CPR','2'),
+('1346', 'National Registry of Emegency Medical Technicians','EMT','3'),
+('4219','National Environmental Trainers', 'HAZMAT','5');
