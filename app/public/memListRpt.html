@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OCFR Member Report</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1><img src="images/firelogo.jpg" class="icon"><div class="headingText">Home</div></h1>
+  </header>
+  <nav class="navbar navbar-expand-sm">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Report 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Report 2</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="mainContent">
+  <h2>Member Report</h2>
+
+<div id="ocfrMemRptApp">
+  <div class="filter">
+    Station Number:
+    <select v-model=filter.stationNumber>
+      <option value="">(all)</option>
+      <option v-for="s in stations"> {{s.stationNumber}}</option>
+    </select>
+    <br><br>
+    Radio Number:
+    <select v-model=filter.radioNumber>
+      <option value="">(all)</option>
+      <option v-for="r in radios"> {{r.radioNumber}}</option>
+    </select>
+  </div>
+  <br>
+
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Radio Number</th>
+        <th>Station Number</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr v-for="m in members"
+        v-if="(filter.stationNumber==''||filter.stationNumber==m.stationNumber)&&(filter.radioNumber==''||filter.radioNumber==m.radioNumber)">
+        <td>{{ m.firstName }}</td>
+        <td>{{ m.lastName }}</td>
+        <td>{{ m.radioNumber }}</td>
+        <td>{{ m.stationNumber }}</td>
+        <td>{{ m.email }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</div>
+
+</div>
+<footer>
+  <p class="info">  OCFR | Phone: 800-555-1234 | 123 Fire Lane, Watkinsville, GA  30622</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/memRpt.app.js"></script>
+</body>
+</html>
