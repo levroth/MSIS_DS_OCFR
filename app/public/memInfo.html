@@ -27,7 +27,7 @@
   </div>
 </nav>
 
-  <div class="container">
+  <div class="container" id="memberRecordApp">
     <div class="row">
       <div id="mainContent" class="col-md">
         <h1> Member </h1>
@@ -45,12 +45,12 @@
             </thead>
             <tbody>
 
-              <tr>
-                <td>{{ employeeID }}</td>
-                <td>{{ firstname }}</td>
-                <td>{{ lastname }}</td>
-                <td>{{ radioNumber }}</td>
-                <td>{{ stationNumber }}</td>
+              <tr v-for="m in memberRecord">
+                <td>{{ m.pId }}</td>
+                <td>{{ m.firstame }}</td>
+                <td>{{ m.lastName }}</td>
+                <td>{{ m.radioNumber }}</td>
+                <td>{{ m.stationNumber }}</td>
                 <td v-if = "m.isActive" >Active</td>
                 <td v-else>Inactive</td>
               </tr>

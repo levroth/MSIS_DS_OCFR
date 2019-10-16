@@ -3,9 +3,9 @@
 $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
-  'SELECT * FROM Person p, CurrentCert cc
-  WHERE cc.cId = ? AND cc.pId = p.pId');
-$stmt->execute([$_GET['cId']]);
+  'SELECT * FROM Certification c, CurrentCert cc
+  WHERE cc.pId = ? AND cc.cId = c.cId');
+$stmt->execute([$_GET['pId']]);
 
 $members = $stmt->fetchAll();
 // Step 3: Convert to JSON

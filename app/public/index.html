@@ -48,7 +48,7 @@
     </thead>
     <tbody>
 
-      <tr v-for="m in members">
+      <tr v-for="m in members" @click="memRowClick(m)">
         <td>{{ m.pId }}</td>
         <td>{{ m.firstName }}</td>
         <td>{{ m.lastName }}</td>

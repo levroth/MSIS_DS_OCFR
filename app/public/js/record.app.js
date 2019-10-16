@@ -19,6 +19,9 @@ var ocfrRecordsApp = new Vue({
     },
     certRowClick(c) {
       window.location.href = 'certInfo.html?cId='+c.cId;
+    },
+    memRowClick(m) {
+      window.location.href = 'certInfo.html?pId='+m.pId;
     }
   },
   created() {
