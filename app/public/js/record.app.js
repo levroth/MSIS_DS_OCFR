@@ -2,7 +2,9 @@ var ocfrRecordsApp = new Vue({
   el: '#ocfrRecordsApp',
   data: {
       certificates: [],
-      members: []
+      newCert: {},
+      members: [],
+      newMember: {}
   },
   methods: {
     fetchMember() {
