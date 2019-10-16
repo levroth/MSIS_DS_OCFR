@@ -14,6 +14,9 @@ var ocfrRecordsApp = new Vue({
       fetch('api/certificates')
       .then(response => response.json())
       .then(json => { ocfrRecordsApp.certificates = json})
+    },
+    certRowClick(c) {
+      window.location.href = 'certInfo.html?cId='+c.cId;
     }
   },
   created() {

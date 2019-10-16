@@ -75,7 +75,7 @@
     </thead>
     <tbody>
 
-      <tr v-for="c in certificates">
+      <tr v-for="c in certificates" @click="certRowClick(c)">
         <td>{{ c.cId }}</td>
         <td>{{ c.agency }}</td>
         <td>{{ c.certName }}</td>
