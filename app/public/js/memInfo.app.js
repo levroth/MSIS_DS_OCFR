@@ -3,29 +3,54 @@ var memberRecordApp = new Vue({
   data: {
       currentPID: {},
       memberRecord: [],
-      certificates: []
+      certificates: [],
+      allCerts: [],
+      addCert: {"cId":"", "date":"", "expiry":""}
   },
   methods: {
     getPID() {
       var url = new URL(window.location);
       var params = new URLSearchParams(url.search);
-      this.currentCID = params.get('pId');
+      this.currentPID = params.get('pId');
     },
     fetchPID() {
       fetch('api/memInfo/index.php?pId='+ this.currentPID)
       .then( response => response.json() )
       .then( json => { this.memberRecord = json } )
     },
-    fetchMembers() {
+    fetchCerts() {
       fetch('api/memCerts/index.php?pId=' + this.currentPID)
       .then( response => response.json() )
       .then( json => { this.certificates = json } )
+    },
+    fetchAllCerts() {
+      fetch('api/certificates')
+      .then( response => response.json() )
+      .then( json => { this.allCerts = json} )
+    },
+    handleCertSubmit(event) {
+      var newData = {"cId":"", "renewedDate":"","expDate":"","pId":""};
+      newData.cId = this.addCert.cId;
+      newData.renewedDate = this.addCert.date;
+      newData.expDate = (Number((this.addCert.date).substring(0,4)) + Number(this.addCert.expiry)) + (this.addCert.date).substring(4);
+      newData.pId = this.currentPID;
+      fetch('api/memCerts/postCert.php', {
+        method:'POST',
+        body: JSON.stringify(newData),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { this.certificates = json} )
+
     }
 
   }, // end methods
   created() {
     this.getPID();
     this.fetchPID();
-    this.fetchMembers();
+    this.fetchCerts();
+    this.fetchAllCerts();
   }
   });
