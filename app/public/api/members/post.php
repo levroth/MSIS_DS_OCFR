@@ -13,9 +13,14 @@ $stmt = $db->prepare(
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
+$booleanNum = 0;
+
+if ($_POST['isActive']== "Active") {
+  $booleanNum = 1;
+}
+
 $stmt->execute([
   $guid,
-  $_POST['pId'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['gender'],
@@ -23,7 +28,7 @@ $stmt->execute([
   $_POST['position'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
-  $_POST['isActive'],
+  $booleanNum,
   $_POST['startDate'],
   $_POST['email'],
   $_POST['mobilePhone'],
@@ -33,4 +38,4 @@ $stmt->execute([
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../members/?guid=' . $guid);
+header('Location: ../members/');

@@ -22,6 +22,18 @@ var ocfrRecordsApp = new Vue({
     },
     memRowClick(m) {
       window.location.href = 'memInfo.html?pId='+m.pId;
+    },
+    handleMemberSubmit(event) {
+      fetch('api/members/post.php', {
+        method:'POST',
+        body: JSON.stringify(this.newMember),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { this.certificates = json} )
+      window.location.href = 'index.html';
     }
   },
   created() {

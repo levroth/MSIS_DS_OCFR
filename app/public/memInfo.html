@@ -68,7 +68,8 @@
                 <button type="submit" class="btn btn-primary">Change Member</button>
               </div>
             </div>
-
+          </form>
+          <form @submit.prevent="handleMemberDelete">
             <div class="form-group row">
               <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary">Delete Member</button>

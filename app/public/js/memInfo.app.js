@@ -44,6 +44,10 @@ var memberRecordApp = new Vue({
       .then( response => response.json() )
       .then( json => { this.certificates = json} )
 
+    },
+    handleMemberDelete(event) {
+        fetch('api/memInfo/delete.php?pId=' + this.memberRecord[0].pId)
+        window.location.href = 'index.html';
     }
 
   }, // end methods
