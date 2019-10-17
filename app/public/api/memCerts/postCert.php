@@ -17,4 +17,4 @@ $stmt->execute([
 // TODO: Error checking?!
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../memCerts/index.php?pId='.$_POST['pId']);
+header('Location: ../memCerts/?pId='.$_POST['pId']);
