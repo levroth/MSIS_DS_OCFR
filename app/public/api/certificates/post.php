@@ -10,19 +10,15 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
   'INSERT INTO Certification (cId, agency, certName, expiry)
-  VALUES (?, ?, ?, ?,)'
+  VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
   $guid,
-  $_POST['cId'],
   $_POST['agency'],
   $_POST['certName'],
-  $_POST['expiry'],
-
-
+  $_POST['expiry']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certificates/?guid=' . $guid);

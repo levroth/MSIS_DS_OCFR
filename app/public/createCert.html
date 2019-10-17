@@ -36,15 +36,9 @@
 
   <h2>Create New Certification Record</h2>
 
-  <form @submit.prevent="handleSubmit">
-    <div class="form-group row">
-      <label for="inputCertificationID" class="col-sm-2 col-form-label">Certification ID</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputCertificationID" placeholder="####" v-model="newCert.cId">
-      </div>
-    </div>
+  <form @submit.prevent="handleCertSubmit">
 
-    <div class="form-group row">
+      <div class="form-group row">
       <label for="inputCertificationAgency" class="col-sm-2 col-form-label">Certificatoin Agency</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="inputCertificationAgency" placeholder="Certification Agency" v-model="newCert.agency">
@@ -65,7 +59,7 @@
       </div>
     </div>
 
-    <a href="index.html" class="btn btn-outline-primary">Submit</a>
+    <button type="submit" class="btn btn-primary">Create Cert.</button>
 
 </div>
 

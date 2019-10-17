@@ -31,8 +31,17 @@ var ocfrRecordsApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => response.json() )
-      .then( json => { this.certificates = json} )
+      window.location.href = 'index.html';
+    },
+    handleCertSubmit(event) {
+      console.log(this.newCert);
+      fetch('api/certificates/post.php', {
+        method:'POST',
+        body: JSON.stringify(this.newCert),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
       window.location.href = 'index.html';
     }
   },
