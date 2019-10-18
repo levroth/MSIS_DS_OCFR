@@ -38,37 +38,113 @@
         <br>
         <h1> Member </h1>
         <div>
-          <table class="table table-sm table-hover">
-            <thead>
-              <tr>
-                <th>Employee ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Radio Number</th>
-                <th>Station Number</th>
-                <th>Is Active?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="m in memberRecord">
-                <td>{{ m.pId }}</td>
-                <td>{{ m.firstName }}</td>
-                <td>{{ m.lastName }}</td>
-                <td>{{ m.radioNumber }}</td>
-                <td>{{ m.stationNumber }}</td>
-                <td v-if = "m.isActive" >Active</td>
-                <td v-else>Inactive</td>
-              </tr>
+          <form @submit.prevent="handleMemberUpdate">
 
-            </tbody>
-          </table>
-          <form>
             <div class="form-group row">
+              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Change Member</button>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="memberRecord.firstName">
               </div>
             </div>
+
+            <div class="form-group row">
+              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="memberRecord.lastName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputGender" placeholder="M | F" v-model="memberRecord.gender">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputDOB" class="col-sm-2 col-form-label">Date of Birth</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputDOB" placeholder="1970-01-01" v-model="memberRecord.dob">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPosition" placeholder="ie. Trainee" v-model="memberRecord.position">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputRadioNumber" placeholder="ie. A-1" v-model="memberRecord.radioNumber">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStationNumber" class="col-sm-2 col-form-label">Station Number</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputStationNumber" type="range" min="0"  placeholder="#" v-model="memberRecord.stationNumber">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputIsActive" class="col-sm-2 col-form-label">Active Status</label>
+              <div class="col-sm-10">
+                <select name="activeStatus" class="form-control" id="inputIsActive" v-model="memberRecord.isActive">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStartDate" class="col-sm-2 col-form-label">Start Date</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputStartDate" placeholder="ie. 2017-01-01" v-model="memberRecord.startDate">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Email Address" v-model="memberRecord.email">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputHomePhone" class="col-sm-2 col-form-label">Home Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputHomePhone" placeholder="(###) ###-####" v-model="memberRecord.homePhone">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputMobilePhone" placeholder="(###) ###-####" v-model="memberRecord.mobilePhone">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputworkPhone" class="col-sm-2 col-form-label">Work Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputWorkPhone" placeholder="(###) ###-####" v-model="memberRecord.workPhone">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address" v-model="memberRecord.address">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Member</button>
+
           </form>
+          <br>
           <form @submit.prevent="handleMemberDelete">
             <div class="form-group row">
               <div class="col-sm-10">

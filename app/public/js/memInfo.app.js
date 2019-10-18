@@ -2,7 +2,7 @@ var memberRecordApp = new Vue({
   el: '#memberRecordApp',
   data: {
       currentPID: {},
-      memberRecord: [],
+      memberRecord: {},
       certificates: [],
       allCerts: [],
       addCert: {"cId":"", "date":"", "expiry":""}
@@ -16,7 +16,7 @@ var memberRecordApp = new Vue({
     fetchPID() {
       fetch('api/memInfo/index.php?pId='+ this.currentPID)
       .then( response => response.json() )
-      .then( json => { this.memberRecord = json } )
+      .then( json => { this.memberRecord = json[0] } )
     },
     fetchCerts() {
       fetch('api/memCerts/index.php?pId=' + this.currentPID)
@@ -46,8 +46,17 @@ var memberRecordApp = new Vue({
 
     },
     handleMemberDelete(event) {
-        fetch('api/memInfo/delete.php?pId=' + this.memberRecord[0].pId)
+        fetch('api/memInfo/delete.php?pId=' + this.memberRecord.pId)
         window.location.href = 'index.html';
+    },
+    handleMemberUpdate(event) {
+      fetch('api/memInfo/post.php', {
+        method:'POST',
+        body: JSON.stringify(this.memberRecord),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
     }
 
   }, // end methods
@@ -56,5 +65,12 @@ var memberRecordApp = new Vue({
     this.fetchPID();
     this.fetchCerts();
     this.fetchAllCerts();
+
+    if (this.memberRecord.isActive) {
+      this.memberRecord.isActive = "Active";
+    } else {
+      this.memberRecord.isActive = "Inactive";
+    }
+    console.log(this.memberRecord.isActive);
   }
   });
