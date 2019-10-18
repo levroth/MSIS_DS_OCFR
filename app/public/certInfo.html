@@ -37,37 +37,41 @@
     <div class="row">
       <div id="mainContent" class="col-md">
         <h1>Certification</h1>
-        <table class="table table-sm table-hover">
-          <thead>
-            <tr>
-              <th>Certification ID</th>
-              <th>Certifying agency</th>
-              <th>Certification name</th>
-              <th>Expiration period</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <tr v-for="c in certRecord">
-              <td>{{ c.cId }}</td>
-              <td>{{ c.agency }}</td>
-              <td>{{ c.certName }}</td>
-              <td>{{ c.expiry }}</td>
-            </tr>
-
-          </tbody>
-        </table>
-
+        <form @submit.prevent="handleCertUpdate">
 
             <div class="form-group row">
-              <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Change Certification</button>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary">Delete Certification</button>
-              </div>
+            <label for="inputCertificationAgency" class="col-sm-2 col-form-label">Certification Agency</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputCertificationAgency" placeholder="Certification Agency" v-model="certRecord.agency">
             </div>
-          </form>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputCertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputCertificationName" placeholder="Certification Name" v-model="certRecord.certName">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputExpirationPeriod" class="col-sm-2 col-form-label">Expiration Period</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputExpirationPeriod" type="range" min="0" placeholder="ie. 3" v-model="certRecord.expiry">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Update Cert.</button>
+        </form>
+
+        <br><br>
+        <form @submit.prevent="handleCertDelete">
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Delete Cert.</button>
+            </div>
+          </div>
+
+        </form>
 
           <table class="table table-sm table-hover">
             <thead>
@@ -94,66 +98,10 @@
             </tbody>
           </table>
           <br>
-          <h2>Add Member</h2>
-          <div class="container">
-          <div class="row">
-            <div id="mainContent" class="col-md">
-              <div id="">
-                <form @submit.prevent="handleSubmit">
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">First Name</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
 
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Last Name</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Radio Number</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Station Number</label>
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Is Active?</label>
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Expiration Date</label>
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                  </div>
-                </form>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
+        </div>
+      </div>
+    </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/certInfo.app.js"></script>
 </body>

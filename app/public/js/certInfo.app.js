@@ -2,7 +2,7 @@ var certificationRecordApp = new Vue({
   el: '#certificationRecordApp',
   data: {
       currentCID: {},
-      certRecord: [],
+      certRecord: {},
       members: []
   },
   methods: {
@@ -14,12 +14,26 @@ var certificationRecordApp = new Vue({
     fetchCID() {
       fetch('api/certInfo/index.php?cId='+ this.currentCID)
       .then( response => response.json() )
-      .then( json => { this.certRecord = json } )
+      .then( json => { this.certRecord = json[0] } )
     },
     fetchMembers() {
       fetch('api/certMembers/index.php?cId=' + this.currentCID)
       .then( response => response.json() )
       .then( json => { this.members = json } )
+    },
+    handleCertDelete(event) {
+        fetch('api/certInfo/delete.php?cId=' + this.certRecord.cId)
+
+        window.location.href = 'index.html';
+    },
+    handleCertUpdate(event) {
+      fetch('api/certInfo/post.php', {
+        method:'POST',
+        body: JSON.stringify(this.certRecord),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
     }
 
   }, // end methods
