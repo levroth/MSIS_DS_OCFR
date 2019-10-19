@@ -9,12 +9,6 @@ $stmt = $db->prepare(
   WHERE pId=?'
 );
 
-$booleanNum = 0;
-
-if ($_POST['isActive']== "Active") {
-  $booleanNum = 1;
-}
-
 $stmt->execute([
   $_POST['firstName'],
   $_POST['lastName'],
@@ -23,7 +17,7 @@ $stmt->execute([
   $_POST['position'],
   $_POST['radioNumber'],
   $_POST['stationNumber'],
-  $booleanNum,
+  $_POST['isActive'],
   $_POST['startDate'],
   $_POST['email'],
   $_POST['mobilePhone'],
