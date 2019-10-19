@@ -1,7 +1,7 @@
 h1 {
-  background-color: #B22222;
+  background-color: 	#8B0000;
   text-align: center;
-  color: #F8F0C6;
+  color: #f6e2bb;
 }
 
 footer {
@@ -19,7 +19,7 @@ footer {
 }
 
 .nav-link {
-  color: #B22222;
+  color: #8B0000;
 }
 
 .nav-link:hover {
@@ -27,11 +27,11 @@ footer {
 }
 
 .navbar {
-  background-color: #F8F0C6;
+  background-color:#f6e2bb;
 }
 
 .navlink {
-  color: #B22222;
+  color: #8B0000;
 }
 
 .icon {
