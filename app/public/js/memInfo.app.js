@@ -42,7 +42,6 @@ var memberRecordApp = new Vue({
         }
 
       }
-      console.log(updateString);
       fetch(updateString, {
         method:'POST',
         body: JSON.stringify(newData),
@@ -52,6 +51,8 @@ var memberRecordApp = new Vue({
       })
       .then( response => response.json() )
       .then( json => { this.certificates = json} )
+
+      this.addCert = {"cId":"", "date":"", "expiry":""};
 
       window.alert("Certification added/updated");
 

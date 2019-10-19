@@ -174,27 +174,38 @@
             </tbody>
           </table>
           <br>
-          <h2> Add Certification </h2>
+          <h2> Add/Update Certification </h2>
           <form @submit.prevent="handleCertSubmit">
-            Certification:
-            <select v-model="addCert.cId">
-              <option v-for="cer in allCerts" :value="cer.cId">
-                {{cer.agency}} - {{cer.certName}}
-              </option>
-            </select>
-            <br><br>
-            Expiry:
-            <select v-model="addCert.expiry">
-              <option v-for="cer in allCerts" v-if="cer.cId == addCert.cId" :value="cer.expiry">
-                {{cer.expiry}}
-              </option>
-            </select>
+            <div class="form-group row">
+              <label for="inputCertification" class="col-sm-2 col-form-label">Certification</label>
+              <div class="col-sm-10">
+                <select name="certification" class="form-control" id="inputCertification" v-model="addCert.cId">
+                  <option v-for="cer in allCerts" :value="cer.cId">
+                    {{cer.agency}} - {{cer.certName}}
+                  </option>
+                </select>
+              </div>
+            </div>
 
-            <br><br>
-            Date Renewed:
-            <input type="date" v-model="addCert.date">
-            <br><br>
-            <button type="submit" class="btn btn-primary">Add Cert.</button>
+            <div class="form-group row">
+              <label for="inputExpiry" class="col-sm-2 col-form-label">Expiry</label>
+              <div class="col-sm-10">
+                <select name="expiry" class="form-control" id="inputExpiry" v-model="addCert.expiry">
+                  <option v-for="cer in allCerts" v-if="cer.cId == addCert.cId" :value="cer.expiry">
+                    {{cer.expiry}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputRenewDate" class="col-sm-2 col-form-label">Date Renewed</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputRenewDate" v-model="addCert.date">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add/Update Cert.</button>
           </form>
           <br><br>
         </div>
