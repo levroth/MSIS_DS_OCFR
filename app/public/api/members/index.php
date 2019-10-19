@@ -2,7 +2,7 @@
 
 $db = DbConnection::getConnection();
 
-$stmt = $db->prepare('SELECT * FROM Person');
+$stmt = $db->prepare('SELECT * FROM Person ORDER BY stationNumber ASC, radioNumber ASC');
 $stmt->execute();
 
 $members = $stmt->fetchAll();

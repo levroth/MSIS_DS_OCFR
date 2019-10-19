@@ -50,6 +50,14 @@
   </div>
   <br>
 
+  <form @submit.prevent="createCSV">
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Export to CSV</button>
+      </div>
+    </div>
+  </form>
+
   <table class="table table-sm table-hover">
     <thead>
       <tr>

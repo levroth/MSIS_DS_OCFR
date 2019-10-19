@@ -41,6 +41,14 @@
       <option v-for="c in expCerts"> {{c.certName}}</option>
     </select>
     <br>
+    <br>
+    <form @submit.prevent="createCSV">
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Export to CSV</button>
+        </div>
+      </div>
+    </form>
 
   <table class="table table-sm table-hover">
     <thead>
@@ -49,7 +57,7 @@
         <th>Last Name</th>
         <th>Certification</th>
         <th>Agency</th>
-        <th>Renew Date</th>
+        <th>Expiration Date</th>
       </tr>
     </thead>
     <tbody>
