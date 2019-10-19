@@ -31,6 +31,7 @@ var ocfrRecordsApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      window.alert("Member was created");
       window.location.href = 'index.html';
     },
     handleCertSubmit(event) {
@@ -42,6 +43,7 @@ var ocfrRecordsApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      window.alert("Certification was created");
       window.location.href = 'index.html';
     }
   },

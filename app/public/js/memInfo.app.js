@@ -47,6 +47,7 @@ var memberRecordApp = new Vue({
     },
     handleMemberDelete(event) {
         fetch('api/memInfo/delete.php?pId=' + this.memberRecord.pId)
+        window.alert("Member was deleted");
         window.location.href = 'index.html';
     },
     handleMemberUpdate(event) {
@@ -57,6 +58,7 @@ var memberRecordApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      window.alert("Member was updated");
     }
 
   }, // end methods

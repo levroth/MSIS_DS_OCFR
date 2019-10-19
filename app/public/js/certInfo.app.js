@@ -23,7 +23,7 @@ var certificationRecordApp = new Vue({
     },
     handleCertDelete(event) {
         fetch('api/certInfo/delete.php?cId=' + this.certRecord.cId)
-
+        window.alert("Certification was deleted");
         window.location.href = 'index.html';
     },
     handleCertUpdate(event) {
@@ -34,6 +34,8 @@ var certificationRecordApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
+      window.alert("Certification was updated");
+
     }
 
   }, // end methods
