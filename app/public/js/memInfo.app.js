@@ -29,12 +29,21 @@ var memberRecordApp = new Vue({
       .then( json => { this.allCerts = json} )
     },
     handleCertSubmit(event) {
+      var updateString = 'api/memCerts/postNewCert.php';
       var newData = {"cId":"", "renewedDate":"","expDate":"","pId":""};
       newData.cId = this.addCert.cId;
       newData.renewedDate = this.addCert.date;
       newData.expDate = (Number((this.addCert.date).substring(0,4)) + Number(this.addCert.expiry)) + (this.addCert.date).substring(4);
       newData.pId = this.currentPID;
-      fetch('api/memCerts/postCert.php', {
+
+      for(var i in this.certificates) {
+        if (this.certificates[i].cId == newData.cId ) {
+          updateString = 'api/memCerts/postUpdateCert.php';
+        }
+
+      }
+      console.log(updateString);
+      fetch(updateString, {
         method:'POST',
         body: JSON.stringify(newData),
         headers: {
@@ -43,6 +52,8 @@ var memberRecordApp = new Vue({
       })
       .then( response => response.json() )
       .then( json => { this.certificates = json} )
+
+      window.alert("Certification added/updated");
 
     },
     handleMemberDelete(event) {
@@ -73,6 +84,5 @@ var memberRecordApp = new Vue({
     } else {
       this.memberRecord.isActive = "Inactive";
     }
-    console.log(this.memberRecord.isActive);
   }
   });
