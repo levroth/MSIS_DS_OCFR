@@ -50,6 +50,5 @@ var ocfrRecordsApp = new Vue({
   created() {
     this.fetchMember();
     this.fetchCertification();
-    //this.fetchPatients();
   }
 });
