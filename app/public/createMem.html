@@ -40,56 +40,56 @@
     <div class="form-group row">
       <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="newMember.firstName">
+        <input type="text" required class="form-control" id="inputFirstName" placeholder="First Name" v-model="newMember.firstName">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="newMember.lastName">
+        <input type="text" required class="form-control" id="inputLastName" placeholder="Last Name" v-model="newMember.lastName">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputGender" placeholder="M | F" v-model="newMember.gender">
+        <input type="text" required class="form-control" id="inputGender" placeholder="M | F" v-model="newMember.gender">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputDOB" class="col-sm-2 col-form-label">Date of Birth</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="inputDOB" placeholder="1970-01-01" v-model="newMember.dob">
+        <input type="date" required class="form-control" id="inputDOB" placeholder="1970-01-01" v-model="newMember.dob">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPosition" placeholder="ie. Trainee" v-model="newMember.position">
+        <input type="text" required class="form-control" id="inputPosition" placeholder="ie. Trainee" v-model="newMember.position">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputRadioNumber" placeholder="ie. A-1" v-model="newMember.radioNumber">
+        <input type="text" required class="form-control" id="inputRadioNumber" placeholder="ie. A-1" v-model="newMember.radioNumber">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputStationNumber" class="col-sm-2 col-form-label">Station Number</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="inputStationNumber" type="range" min="0"  placeholder="#" v-model="newMember.stationNumber">
+        <input type="number" required class="form-control" id="inputStationNumber" type="range" min="0"  placeholder="#" v-model="newMember.stationNumber">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputIsActive" class="col-sm-2 col-form-label">Active Status</label>
       <div class="col-sm-10">
-        <select name="activeStatus" class="form-control" id="inputIsActive" v-model="newMember.isActive">
+        <select name="activeStatus" required class="form-control" id="inputIsActive" v-model="newMember.isActive">
             <option value="1">Active</option>
             <option value="0">Inactive</option>
         </select>
@@ -99,35 +99,35 @@
     <div class="form-group row">
       <label for="inputStartDate" class="col-sm-2 col-form-label">Start Date</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="inputStartDate" placeholder="ie. 2017-01-01" v-model="newMember.startDate">
+        <input type="date" required class="form-control" id="inputStartDate" placeholder="ie. 2017-01-01" v-model="newMember.startDate">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Email Address" v-model="newMember.email">
+        <input type="email" required class="form-control" id="inputEmail" placeholder="Email Address" v-model="newMember.email">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputHomePhone" class="col-sm-2 col-form-label">Home Phone</label>
+      <label for="inputHomePhone" class="col-sm-2 col-form-label">Home Phone (format ###-###-####)</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputHomePhone" placeholder="(###) ###-####" v-model="newMember.homePhone">
+        <input type="tel" class="form-control" id="inputHomePhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" v-model="newMember.homePhone">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+      <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone (format ###-###-####)</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputMobilePhone" placeholder="(###) ###-####" v-model="newMember.mobilePhone">
+        <input type="tel" class="form-control" id="inputMobilePhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" v-model="newMember.mobilePhone">
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="inputworkPhone" class="col-sm-2 col-form-label">Work Phone</label>
+      <label for="inputworkPhone" class="col-sm-2 col-form-label">Work Phone (format ###-###-####)</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputWorkPhone" placeholder="(###) ###-####" v-model="newMember.workPhone">
+        <input type="tel" class="form-control" id="inputWorkPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####" v-model="newMember.workPhone">
       </div>
     </div>
 
