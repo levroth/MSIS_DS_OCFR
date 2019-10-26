@@ -67,7 +67,7 @@ table {
 th,
 td {
 	padding: 15px;
-	background-color: rgba(255,0,0,0.2);
+	background-color: #8B0000;
 	color: #fff;
 }
 
@@ -77,14 +77,14 @@ th {
 
 thead {
 	th {
-		background-color: #55608f;
+		background-color: #8B0000;
 	}
 }
 
 tbody {
 	tr {
 		&:hover {
-			background-color: rgba(255,0,0,0.3);
+			background-color: #D3D3D3;
 		}
 	}
 	td {
@@ -97,7 +97,7 @@ tbody {
 				right: 0;
 				top: -9999px;
 				bottom: -9999px;
-				background-color: rgba(255,0,0,0.2);
+				background-color: #D3D3D3;
 				z-index: -1;
 			}
 		}
