@@ -57,6 +57,7 @@ footer {
 .mainContent {
   padding: 20px;
 }
+
 table {
 	width: 800px;
 	border-collapse: collapse;
@@ -64,10 +65,18 @@ table {
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-th,
-td {
+th
+{
 	padding: 15px;
 	background-color: #8B0000;
+	color: #fff;
+}
+
+td
+
+{
+	padding: 15px;
+	background-color: #D3D3D3;
 	color: #fff;
 }
 
@@ -77,14 +86,14 @@ th {
 
 thead {
 	th {
-		background-color: #8B0000;
+		background-color: #55608f;
 	}
 }
 
 tbody {
 	tr {
 		&:hover {
-			background-color: #D3D3D3;
+			background-color: #8B0000;
 		}
 	}
 	td {
@@ -97,7 +106,7 @@ tbody {
 				right: 0;
 				top: -9999px;
 				bottom: -9999px;
-				background-color: #D3D3D3;
+				background-color: rgba(255,255,255,0.2);
 				z-index: -1;
 			}
 		}
