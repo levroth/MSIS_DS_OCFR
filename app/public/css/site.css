@@ -58,57 +58,29 @@ footer {
   padding: 20px;
 }
 
+/*Taken from `https://css-tricks.com/simple-css-row-column-highlighting/`*/
+
 table {
-	width: 800px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-th
-{
-	padding: 15px;
-	background-color: #8B0000;
-	color: #fff;
-}
-
-td
-
-{
-	padding: 15px;
-	background-color: #D3D3D3;
-	color: #fff;
+  overflow: hidden;
 }
 
 th {
-	text-align: left;
+  background-color: #8B0000;
+  color: white;
+  box-shadow:
 }
 
-thead {
-	th {
-		background-color: #55608f;
-	}
+td, th {
+  position: relative;
 }
-
-tbody {
-	tr {
-		&:hover {
-			background-color: #8B0000;
-		}
-	}
-	td {
-		position: relative;
-		&:hover {
-			&:before {
-				content: "";
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: -9999px;
-				bottom: -9999px;
-				background-color: rgba(255,255,255,0.2);
-				z-index: -1;
-			}
-		}
-	}
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #D3D3D3;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
 }
