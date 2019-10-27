@@ -13,6 +13,10 @@
   color: #f6e2bb;
 }
 
+.selectCursor {
+  cursor: pointer;
+}
+
 .view {
     background: url("../images/banner.jpg")no-repeat center center;
     background-size: cover;

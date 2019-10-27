@@ -57,7 +57,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="m in members" @click="memRowClick(m)">
+              <tr class="selectCursor" v-for="m in members" @click="memRowClick(m)">
                 <td>{{ m.pId }}</td>
                 <td>{{ m.firstName }}</td>
                 <td>{{ m.lastName }}</td>
@@ -89,7 +89,7 @@
       </thead>
       <tbody>
 
-        <tr v-for="c in certificates" @click="certRowClick(c)">
+        <tr class="selectCursor" v-for="c in certificates" @click="certRowClick(c)">
           <td>{{ c.cId }}</td>
           <td>{{ c.agency }}</td>
           <td>{{ c.certName }}</td>
