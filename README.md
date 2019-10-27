@@ -1,4 +1,4 @@
-#MSIS Project
+# MSIS Project
 This is the repo for our MSIS DS group Project
 ## Our site
 Our site can be found here: http://ec2-3-80-193-36.compute-1.amazonaws.com/
