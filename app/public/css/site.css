@@ -4,9 +4,43 @@ h1 {
   color: #f6e2bb;
 }
 
+#banner{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  font-size: 45px;
+  font-family: monospace;
+  font-weight: bold;
+  border-style: dotted;
+  border-radius: 12px;
+}
+
+.view {
+    background: url("https://static.seattletimes.com/wp-content/uploads/2019/06/082650-1560x824.jpg")no-repeat center center;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.social_media_logo{
+    width: 30px;
+    margin-right: 5px;
+}
+
+.social_media{
+    text-align: center;
+}
+
+body{
+    background-color: #E8E8E8;
+    font-family: Garamond;
+}
+
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+  background-color: black;
+  color: white;
 }
 
 .btn-primary {
@@ -30,6 +64,8 @@ footer {
 
 .nav-link {
   color: #8B0000;
+  font-family: Garamond;
+  font-size: 16px;
 }
 
 .nav-link:hover {
@@ -45,8 +81,8 @@ footer {
 }
 
 .icon {
-  max-height: 100%;
-  max-width: 20%;
+  width: 50px;
+  margin-right: 5px;
 }
 
 .headingText {
