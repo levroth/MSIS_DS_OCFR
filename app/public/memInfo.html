@@ -173,7 +173,7 @@
                 <td>{{ c.agency }}</td>
                 <td>{{ c.certName }}</td>
                 <td>{{ c.expDate }}</td>
-                <td> <button @click="handleCertDelete(memberRecord.pId, c.cId)">X</button> </td>
+                <td> <button id="btn_s" @click="handleCertDelete(memberRecord.pId, c.cId)"><i class="fa fa-trash"></i></button> </td>
               </tr>
             </tbody>
           </table>
