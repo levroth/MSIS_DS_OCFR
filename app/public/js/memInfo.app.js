@@ -28,6 +28,23 @@ var memberRecordApp = new Vue({
       .then( response => response.json() )
       .then( json => { this.allCerts = json} )
     },
+    handleCertDelete(memID, certID) {
+      var newData = {"pId":"","cId":""};
+      newData.pId = memID;
+      newData.cId = certID;
+      fetch('api/memCerts/deleteMemCert.php', {
+        method:'POST',
+        body: JSON.stringify(newData),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { this.certificates = json} )
+      newData = {"pId":"","cId":""};
+      window.alert("Certification removed");
+
+    },
     handleCertSubmit(event) {
       var updateString = 'api/memCerts/postNewCert.php';
       var newData = {"cId":"", "renewedDate":"","expDate":"","pId":""};

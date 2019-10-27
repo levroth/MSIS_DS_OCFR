@@ -162,6 +162,7 @@
                 <th>Certifying Agency</th>
                 <th>Certification Name</th>
                 <th>Expiration Date</th>
+                <th>Delete Cert.</th>
               </tr>
             </thead>
             <br>
@@ -172,6 +173,7 @@
                 <td>{{ c.agency }}</td>
                 <td>{{ c.certName }}</td>
                 <td>{{ c.expDate }}</td>
+                <td> <button @click="handleCertDelete(memberRecord.pId, c.cId)">X</button> </td>
               </tr>
             </tbody>
           </table>
