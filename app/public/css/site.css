@@ -20,6 +20,9 @@ h1 {
     background: url("https://static.seattletimes.com/wp-content/uploads/2019/06/082650-1560x824.jpg")no-repeat center center;
     background-size: cover;
     opacity: 0.6;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 140px;
 }
 
 .social_media_logo{
