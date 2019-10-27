@@ -1,5 +1,5 @@
 #banner{
-  width: 80%;
+  width: 50%;
   height: auto;
   margin: auto;
   text-align: center;
@@ -8,7 +8,7 @@
   font-weight: bold;
   border-style: dotted;
   border-radius: 12px;
-  background-color: 	#8B0000;
+  background-color: #8B0000;
   text-align: center;
   color: #f6e2bb;
 }
@@ -52,6 +52,53 @@ footer {
   background-color: #ff7777;
   border-color: #8B0000;
 }
+
+
+/* borrowed from https://bloggersorigin.com/blockquote-styles-customize-blockquote-blogger/*/
+
+
+blockquote {
+  position: relative;
+  color: #333;
+  border: 3px solid #8B0000;
+  border-style: dashed;
+  border-radius: 80px;
+  padding: 15px;
+  text-align: center;
+  font: 12px;
+  font-style: italic;
+  font-weight: 1000px;
+  width:50%;
+  margin: 1em auto;
+}
+
+blockquote:before {
+  display: block;
+  border: 10px solid #ad4c4c;
+  position: absolute;
+  background: none repeat scroll 0 0;
+  content: "";
+  height: 50px;
+  width: 50px;
+  right: 100px;
+  bottom: -40px;
+  border-radius: 50px;
+  z-index: 10;
+}
+blockquote:after {
+  position: absolute;
+  background: none repeat scroll 0 0;
+  display: block;
+  content: "";
+  height: 25px;
+  border: 10px solid #c57f7f;
+  bottom: -60px;
+  right: 50px;
+  width: 25px;
+  border-radius: 25px;
+  z-index: 10;
+}
+
 
 /* borrowed from https://www.codeply.com/go/4FdZGlPMNV/bootstrap-4-custom-navbar-toggler-icon-color*/
 .navbar-toggler-icon {
